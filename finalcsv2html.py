@@ -1,5 +1,5 @@
 import csv
-import cgi, cgitb
+# import cgi, cgitb
 # import sys
 
 # if len(sys.argv) < 2:
