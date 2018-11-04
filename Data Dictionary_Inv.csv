@@ -1,0 +1,17 @@
+﻿Concept,DataCheck,Length,DataType,Description,OutputCol,Required,Example Inputs,INPUT
+Inventory,Past,6-8 characters,Epoch time,Date the car was received by the dealership,Receipt_Date,Mandatory,,INPUT
+Inventory,Past,6-8 characters,Epoch time,Date the car was sold,Sale_Date,Used,,INPUT
+Inventory,Past,6-8 characters,Epoch time,Date the vehicle was purchased,Purchase_Date,Used,,INPUT
+Inventory,Categories,,Alphanumeric,Type of vehicle ,Vehicle_Type,Used,New/Used/Demo,INPUT
+Inventory,Categories,,Alphanumeric,Whether the vehicle is to be sold as wholesale or not ,Wholesale_Status,Used,Y/N,INPUT
+Inventory,17 characters,17 characters,Alphanumeric,Vehicle Identification Number,Vehicle_VIN [Secondary Key],Used,ABC4567690B540933,INPUT
+Inventory,Categories,,Alphanumeric,Vehicle Manufacturer ,Vehicle_Make,Used,CHEVROLET,INPUT
+Inventory,Categories,,Alphanumeric,Vehicle Model ,Vehicle_Model,Used,Spark,INPUT
+Inventory,YYYY,4 characters,Numeric,Year the vehicle was manufactured,Vehicle_Year,Used,2018,INPUT
+Inventory,Categories,,Alphanumeric,Trim of the vehicle ,Vehicle_Trimlevel,Used,LX/Turbo/Sport,INPUT
+Inventory,Categories,,Alphanumeric,Color of the vehicle,Vehicle_Color,Used,Silver/Red/Black,INPUT
+Inventory,Categories,,Alphanumeric,Unique identification number for a vehicle in stock,Stock_ID [Primary Key],Used,ST65879,INPUT
+Inventory,Remove non-numeric characters,,Numeric,Value of the vehicle in Inventory,Inventory_Amount,Used,,INPUT
+Inventory,Remove non-numeric characters,,Numeric,Cost of the vehicle for the dealer,Vehicle_Base_Cost,Used,,INPUT
+Inventory,Remove non-numeric characters,,Numeric,Selling price of the vehicle,Vehicle_Price,Used,,INPUT
+Inventory,Remove non-numeric characters,,Numeric,Value of flooring (Financing) available for the vehicle,Flooring_Price,Used,,INPUT
