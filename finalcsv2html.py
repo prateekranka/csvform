@@ -18,11 +18,27 @@ reader = csv.reader(open(datadict_path + 'Data Dictionary_Inv.csv'))
 f_html = open('Inventory_new.html',"w")
 
 f_html.write('<title>Inventory Data Dictionary</title>')
+
+f_html.write('<head>')
+f_html.write('<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>')
+f_html.write('<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>')
 # f_html.write('<script src="submit_javascript.js"></script>')
-f_html.write('<meta http-equiv="Content-Type" content="text/html; charset=utf-8">')
+f_html.write('</head>')
+
 f_html.write('<style>body {background-color: white;text-align: center;   color: black;}table, th, td {    border: 1px solid black;    border-collapse: collapse;}</style>')
-f_html.write('<form method = "post" action = "processinput.cgi" id = "form_id">')
+
+f_html.write('<form method = "post" id = "form_id">')
+
 f_html.write('<table>')
+for row in reader:
+    # print "Start of row"
+    # print row
+    # print "End of row"
+    for column in row:
+        f_html.write('<th>' + column + '</th>')
+        # print column
+    break
+
 for row in reader: # Read a single row from the CSV file
   f_html.write('<tr>')# Create a new row in the table
   for column in row: # For each column..
@@ -34,6 +50,12 @@ for row in reader: # Read a single row from the CSV file
 
 
 f_html.write('</table>')
-f_html.write('<input type="submit" name = "submitbutton" value="Submit" />')
+# f_html.write('<script> ')
+f_html.write('<pre>"Hello"</pre>')
+f_html.write('<pre id = "json"></pre>')
+f_html.write('<pre>"Here"</pre>')
+f_html.write('<script> function myfunction(){document.getElementById("form_id").submit();var myRows = [];var $headers = $("th");var $rows = $("tbody tr").each(function(index) {$cells = $(this).find("td");myRows[index] = {};$cells.each(function(cellIndex) {myRows[index][$($headers[cellIndex]).html()] = $(this).html();});});var myObj = {};myObj.myrows = myRows;document.getElementById("json").innerHTML = JSON.stringify(myObj);}</script>')
+# f_html.write()
+f_html.write('<button type="button" name = "submitbutton" onclick = "myfunction()">Submit</button>')
 f_html.write('</form>')
 
