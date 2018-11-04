@@ -18,7 +18,7 @@ reader = csv.reader(open(datadict_path + 'Data Dictionary_Inv.csv'))
 f_html = open('Inventory_new.html',"w")
 
 f_html.write('<title>Inventory Data Dictionary</title>')
-f_html.write('<script src="submit_javascript.js"></script>')
+# f_html.write('<script src="submit_javascript.js"></script>')
 f_html.write('<meta http-equiv="Content-Type" content="text/html; charset=utf-8">')
 f_html.write('<style>body {background-color: white;text-align: center;   color: black;}table, th, td {    border: 1px solid black;    border-collapse: collapse;}</style>')
 f_html.write('<form method = "post" action = "processinput.cgi" id = "form_id">')
